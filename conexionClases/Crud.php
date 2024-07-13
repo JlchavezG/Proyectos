@@ -10,8 +10,8 @@ $db = $database->getConnection();
 $registro = new Registro($db);
 
 // Crear un nuevo registro
-$registro->nombre = "Nuevo Registro";
-$registro->descripcion = "Descripción del nuevo registro";
+$registro->nombre = "Mouse";
+$registro->descripcion = "Dispositivo periferico inalambrico";
 if($registro->crear()) {
     echo "Registro creado exitosamente.\n";
 } else {
@@ -27,8 +27,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
 // Actualizar un registro
 $registro->id = 1;
-$registro->nombre = "Registro Actualizado";
-$registro->descripcion = "Descripción actualizada";
+$registro->nombre = "Lapiz Optico";
+$registro->descripcion = "Pencil de Apple";
 if($registro->actualizar()) {
     echo "Registro actualizado exitosamente.\n";
 } else {
