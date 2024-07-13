@@ -1,26 +1,22 @@
-<?php 
-class Database{
+<?php
+class Database {
     private $host = "localhost";
-    private $db_nombre = "Proyectos";
+    private $db_name = "Proyectos";
     private $username = "root";
     private $password = "";
-    public $conecta;
+    public $conn;
 
-    public function getConexion(){
-        $this->conecta = null;
+    public function getConnection() {
+        $this->conn = null;
 
-        try{
-            $this->conecta = new PDO("mysql:host=".$this->host. ";db_nombre=".$this->db_nombre, 
-            $this->username, $this->password);
-            $this->conecta->exec("set names utf8");
+        try {
+            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $this->conn->exec("set names utf8");
+        } catch(PDOException $exception) {
+            echo "Error de conexión: " . $exception->getMessage();
         }
-        catch(PDOException $exeption){
-            echo "Error de conexion: ".$exeption->getMessage();
-        }
-        return $this->conecta;
+
+        return $this->conn;
     }
 }
-
-
-
 ?>
