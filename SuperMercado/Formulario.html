@@ -25,7 +25,7 @@
 
             fieldGroup.appendChild(productoField);
             fieldGroup.appendChild(cantidadField);
-            document.getElementById('fields').appendChild(fields-gruop);
+            document.getElementById('fields').appendChild(fieldGroup);
 
         }
     </script>
@@ -36,11 +36,11 @@
     <form action="add_productos.php" method="post">
         <div>
             <label for="nombre">Nombre del Producto</label>
-            <input type="text" name="nombre" id="nombre" placeholder="Nombre del producto" required>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre del producto">
         </div>
         <div>
             <label for="precio">Precio del Producto</label>
-            <input type="text" name="precio" id="precio" placeholder="Precio del producto" required>
+            <input type="text" name="precio" id="precio" placeholder="Precio del producto">
         </div>
         <button type="submit">Agregar Producto</button>
     </form>
